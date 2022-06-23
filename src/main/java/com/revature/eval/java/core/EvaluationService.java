@@ -14,8 +14,15 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String reverse(String string) {
-		
-		return "";
+		String result = "";
+		// split my string array into a char array
+		char[] letters = string.toCharArray();
+		// iterate thru that array backwards
+		for(int i = letters.length -1; i >= 0; i--) {
+			result += letters[i];
+		}
+		System.out.println(result);
+		return result;
 	}
 
 	/**
