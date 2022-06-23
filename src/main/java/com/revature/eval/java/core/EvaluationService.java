@@ -148,8 +148,29 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getScrabbleScore(String string) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		String uword=string.toUpperCase();
+		int score=0;
+		for(int i=0;i<uword.length();i++)
+		{
+			switch(uword.charAt(i))
+			{
+			case 'Q': case 'Z':
+		          score+=10; break;
+		        case 'J': case 'X':
+		          score+=8; break;
+		        case 'K':
+		          score+=5; break;
+		        case 'F': case 'H': case 'V': case 'W': case 'Y':
+		          score+=4; break;
+		        case 'B': case 'C': case 'M': case 'P':
+		          score+=3; break;
+		        case 'D': case 'G':
+		          score+=2;break;
+		        default:
+		          score+=1;break;
+			}
+		}
+		return score;
 	}
 
 	/**
