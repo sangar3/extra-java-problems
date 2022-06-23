@@ -4,6 +4,8 @@ import java.time.temporal.Temporal;
 import java.util.List;
 import java.util.Map;
 
+import org.w3c.dom.Text;
+
 public class EvaluationService {
 
 	/**
@@ -21,7 +23,7 @@ public class EvaluationService {
 		for(int i = letters.length -1; i >= 0; i--) {
 			result += letters[i];
 		}
-		System.out.println(result);
+//		System.out.println(result);
 		return result;
 	}
 
@@ -34,8 +36,15 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String acronym(String phrase) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		String acronym = "";
+		// iterate thru string by char
+		for( char c: phrase.toCharArray() )
+			// finds upper case in phrase
+			if(Character.isUpperCase(c))
+				// prints upper case letters from phrases
+				acronym += c;
+		System.out.println(acronym);
+		return acronym;
 	}
 
 	/**
