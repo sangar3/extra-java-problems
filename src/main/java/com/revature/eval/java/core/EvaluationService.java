@@ -154,6 +154,7 @@ public class EvaluationService {
 		{
 			switch(uword.charAt(i))
 			{
+			// score cases 
 			case 'Q': case 'Z':
 		          score+=10; break;
 		        case 'J': case 'X':
@@ -205,8 +206,17 @@ public class EvaluationService {
 	 * NANP-countries, only 1 is considered a valid country code.
 	 */
 	public String cleanPhoneNumber(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		
+		String number = "";
+		for(int i=0; i<string.length(); i++) {
+			char digit = string.charAt(i);
+			if(digit == '-' || digit == ' ' || digit == '(' || digit == ')' || digit == '.') {
+				continue;
+			}
+			number = number + string.charAt(i);
+			
+		}
+		return number;
 	}
 
 	/**
